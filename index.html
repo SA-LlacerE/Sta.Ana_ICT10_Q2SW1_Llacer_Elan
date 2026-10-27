@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literary Creatives Club | Member Verification</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.3.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2024.3.1/core.js"></script>
+
+    <!-- Bootstrap and CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    
+    <!-- Literary Theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-parchment: #fcf8f2;
+            --card-bg: #ffffff;
+            --primary-burgundy: #581825;
+            --accent-gold: #c59b27;
+            --text-dark: #2b2625;
+            --text-muted: #6e655f;
+            --border-color: #e8ded1;
+        }
+
+        body {
+            background-color: var(--bg-parchment);
+            color: var(--text-dark);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .literary-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            box-shadow: 0 12px 32px rgba(88, 24, 37, 0.05);
+            padding: 2.5rem;
+        }
+
+        .club-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: var(--primary-burgundy);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .club-subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--primary-burgundy);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-control {
+            border: 1.5px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            background-color: #faf7f3;
+            transition: all 0.2s ease;
+        }
+
+        .form-control:focus {
+            background-color: #ffffff;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 4px rgba(197, 155, 39, 0.15);
+        }
+
+        .btn-literary {
+            background-color: var(--primary-burgundy);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-literary:hover {
+            background-color: #40101a;
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .result-box {
+            border-radius: 12px;
+            background: #fdfaf6;
+            border: 1px dashed var(--accent-gold);
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.15rem;
+            color: var(--primary-burgundy);
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container py-5" style="max-width: 620px;">
+        <div class="literary-card mb-4">
+            <div class="text-center mb-4">
+                <span class="badge rounded-pill bg-light text-dark border px-3 py-2 mb-2" style="border-color: var(--accent-gold) !important; color: var(--primary-burgundy) !important;">
+                    ✒️ Membership Verification
+                </span>
+                <h2 class="club-title mb-1">Literary Creatives Club</h2>
+                <p class="club-subtitle">Enter candidate credentials below to check qualification.</p>
+            </div>
+
+            <form onsubmit="return false;">
+                <div class="mb-3">
+                    <label for="first_name" class="form-label">First Name</label>
+                    <input type="text" id="first_name" class="form-control" placeholder="e.g. Amor" required>
+                </div>
+                <div class="mb-4">
+                    <label for="last_name" class="form-label">Last Name</label>
+                    <input type="text" id="last_name" class="form-control" placeholder="e.g. Rita" required>
+                </div>
+                <div class="d-grid">
+                    <input type="button" value="Verify Membership" py-click="candidate_checker" class="btn btn-literary">
+                </div>
+            </form>
+
+            <div id="output" class="result-box p-3 mt-4 text-center">
+                <span class="text-muted fs-6" style="font-family: 'Plus Jakarta Sans', sans-serif;">Result will be displayed here...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Python file -->
+    <script type="py" src="main.py"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
